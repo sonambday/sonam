@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachha bada ho gaya | Happy 18th Birthday</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary: #ff4081;
+            --secondary: #3f51b5;
+            --accent: #ffeb3b;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --success: #4caf50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 64, 129, 0.4);
+        }
+
+        .btn.secondary {
+            background-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+        }
+
+        .btn.secondary:hover {
+            box-shadow: 0 6px 16px rgba(63, 81, 181, 0.4);
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        #hero {
+            background-color: var(--light);
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-shadow: 3px 3px 0 var(--accent);
+            line-height: 1.2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        .certificate {
+            max-width: 700px;
+            width: 90%;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #fff;
+            border: 10px solid var(--accent);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            text-align: center;
+        }
+
+        .certificate:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        .certificate-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .certificate-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .certificate-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .certificate-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            color: var(--dark);
+        }
+
+        .certificate-seal {
+            width: 100px;
+            height: 100px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            font-weight: 900;
+            color: var(--dark);
+            border: 5px solid var(--primary);
+            transform: rotate(-15deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* MESSAGES SECTION */
+        #messages {
+            background-color: #f0f6ff;
+            position: relative;
+        }
+
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .message-card {
+            height: 180px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .message-front,
+        .message-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .message-front {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            transform: rotateY(0deg);
+        }
+
+        .message-back {
+            background-color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .message-card.flipped .message-front {
+            transform: rotateY(-180deg);
+        }
+
+        .message-card.flipped .message-back {
+            transform: rotateY(0deg);
+        }
+
+        .message-author {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tap-hint {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            left: 0;
+        }
+
+        .message-content {
+            flex: 1;
+            padding: 25px 20px 10px;
+            overflow-y: auto;
+            max-height: calc(100% - 50px);
+        }
+
+        .message-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .message-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .close-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 0;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Custom Scrollbar */
+        .message-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .message-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .message-content::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .message-content::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .messages-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 15px;
+            }
+
+            .message-card {
+                height: 160px;
+            }
+
+            .message-author {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .messages-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+
+        /* TROLL SECTION */
+        #troll {
+            background-color: #fff0f5;
+            text-align: center;
+        }
+
+        .troll-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .troll-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        #yes-btn {
+            background-color: var(--success);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+
+        #yes-btn:hover {
+            box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+        }
+
+        #no-btn {
+            background-color: #f44336;
+            box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        #no-btn:hover {
+            box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+        }
+
+        .video-container {
+            margin-top: 50px;
+            display: none;
+            width: 100%;
+            max-width: 640px;
+            margin: 50px auto 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* GALLERY SECTION */
+        #gallery {
+            background-color: #f0f8ff;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-video {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: 16 / 9;
+        }
+
+        .gallery-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            max-width: 100%;
+            max-height: 90vh;
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* MUSIC CONTROLS */
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .music-controls:hover {
+            transform: scale(1.1);
+        }
+
+        /* CONFETTI ANIMATION */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            opacity: 0.8;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        /* BALLOON ANIMATION */
+        .balloon {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            border-radius: 50%;
+            animation: float linear infinite;
+            bottom: -100px;
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-120vh) rotate(15deg);
+            }
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .certificate {
+                padding: 30px;
+            }
+
+            .certificate-title {
+                font-size: 2.5rem;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .certificate {
+                padding: 20px;
+            }
+
+            .certificate-title {
+                font-size: 2rem;
+            }
+
+            .certificate-text {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery-video {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .certificate-header {
+                font-size: 1.5rem;
+            }
+
+            .certificate-title {
+                font-size: 1.8rem;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Birthday18</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#messages">Gaaliyan</a></li>
+                    <li><a href="#troll">Surprise</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bachha bada ho gaya</h1>
+                <h2 class="hero-subtitle">Happy 18th Birthday!</h2>
+                <a href="#messages" class="btn">Dosto ki gaaliyan yaha padhe</a>
+
+                <div class="certificate">
+                    <div class="certificate-header">Official Certificate of</div>
+                    <div class="certificate-title">ADULTHOOD</div>
+                    <p class="certificate-text">
+                        🎓 Sonam Ka Adulthood Certificate 🎓<br><br>
+                        Yeh certificate proudly declare karta hai ki Sonam ab officially bacha nahi raha!<br>
+                        Bhai ab tu legal adult ban chuka hai — matlab:<br><br>
+                        ✅ Apne decisions khud lega (chahe galat hi kyu na ho)<br>
+                        ✅ Raat bhar mobile chalana now officially allowed<br>
+                        ✅ Subah cake breakfast mein khana – koi rok tok nahi<br>
+                        ✅ Aur tax ki baatein sunke sir hila dena – samjhe bina bhi
+                    </p>
+
+                    <p class="certificate-text">
+                        <strong>⚠️ Side Effects:</strong><br>
+                        Bill bharne ka dukh<br>
+                        Zimmedari ka bojh<br>
+                        Aur woh shocking moment jab realize karega ki “nap lena toh maa kasam sukoon hai!”
+                    </p>
+
+                    <div class="certificate-seal">18+</div>
+                    <div class="certificate-signature">The Universe</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages Section -->
+    <section id="messages">
+        <div class="container">
+            <h2 class="section-title">Gaaliyan</h2>
+            <div class="messages-container">
+                <div class="messages-grid">
+                    <!-- Message cards -->
+                    <div class="message-card" data-author="Mom">
+                        <div class="message-front">
+                            <h3 class="message-author">Ninja</h3>
+                            <div class="tap-hint">Tap to read</div>
+                        </div>
+                        <div class="message-back">
+                            <div class="message-content">
+                                <p>
+                                    haappyy birthdayy sonamm!! bachhaa bada horaa 18 saal ka hogya!! ab toh tu bhi.
+                                    since youu 18 ka abb, beta dekhh apne kharche kam karde and start saving lol. khairr
+                                    besides these abb apna license banwa le tu bhii fiirr dono milke gediya marenge raat
+                                    ko long drives wagera lmao, ion even remember dhangse ki kitne saal hogye and even
+                                    after itne saal we stil in touch and the bond bhaaii, likee bhoott kamm log hote joo
+                                    bachpan se abhi takk sath hote and we still are. i love youu so muchh and i am so
+                                    proud of youu. i hope you have the bestt dayy everr and enjoyy it to the fullest.bas
+                                    abb zada pakar pakar na karte hue one last timee HAPPIESSTT 18th BIRTHDAYY MUNNA
+                                    <br><br>
+                                </p>
+                            </div>
+                            <button class="close-btn">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="message-card" data-author="Your Best Friend">
+                        <div class="message-front">
+                            <h3 class="message-author">Vedant</h3>
+                            <div class="tap-hint">Tap to read</div>
+                        </div>
+                        <div class="message-back">
+                            <div class="message-content">
+                                <p>
+                                    bros finally 18 my god nga took forever late born ahh. 
+i dont really know what to say rn but you already are well aware of what you are to me and i want you to know that everything I've said about you till now is very genuine, that im genuinely very grateful for you and the relationship we share. im glad you were born eighteen years ago today, thanks to that i got one of those rare gems who's gonna grow alongwith me. ily man i hope we keep celebrating each other's birthday like this forever i dont want this to end. and lastly, you're more than a friend, more than a best friend, more than just a homie to me. remember that yea? love you
+                                </p>
+                            </div>
+                            <button class="close-btn">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="message-card" data-author="Dad">
+                        <div class="message-front">
+                            <h3 class="message-author">Ari</h3>
+                            <div class="tap-hint">Tap to read</div>
+                        </div>
+                        <div class="message-back">
+                            <div class="message-content">
+                                <p>
+                                    happy birthday soham my shining armour, my day 1. u mean so much to me i don’t even
+                                    gotta explain. enjoy this day to your fullest bhai this years going to be full of
+                                    blessings and i will be here with u every step my nigga I LOVE YOU IM ARI TO YOUR
+                                    SOHAM AND THATS A VERY HEAVY STATEMENT. i hope we can meetup this year asw
+                                    nigga i love you sm
+                                </p>
+                            </div>
+                            <button class="close-btn">Close</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Troll Section -->
+    <section id="troll">
+        <div class="container">
+            <div class="troll-container">
+                <h2 class="troll-title">Sonam ko nachte dekhoge?</h2>
+                <div class="buttons-container">
+                    <button class="btn" id="yes-btn">hum dekhenge</button>
+                    <button class="btn" id="no-btn">nahi mann nahi</button>
+                </div>
+                <div class="video-container">
+                    <video controls id="dance-video">
+                        <source src="/static/troll1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls id="dance-video">
+                        <source src="/static/troll2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls id="dance-video">
+                        <source src="/static/troll3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls id="dance-video">
+                        <source src="/static/troll4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-container">
+                    <video controls id="dance-video">
+                        <source src="/static/troll5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-container">
+                <!-- Photo items -->
+                <div class="gallery-item">
+                    <img src="/static/soham1.jpg" alt="Birthday memory 1">
+                    <div class="gallery-caption">Munna bada pyaara</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham2.jpg" alt="Birthday memory 2">
+                    <div class="gallery-caption">aaj blue h paani paani</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham3.jpg" alt="Birthday memory 3">
+                    <div class="gallery-caption">jawline sharper than knife</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham5.png" alt="Birthday memory 4">
+                    <div class="gallery-caption">pookie</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham4.jpg" alt="Birthday memory 5">
+                    <div class="gallery-caption">Sexy ekdam</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="/static/soham6.jpg" alt="Birthday memory 7">
+                    <div class="gallery-caption">HEHE</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham7.jpg" alt="Birthday memory 8">
+                    <div class="gallery-caption">mummas boy</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham8.jpg" alt="Birthday memory 9">
+                    <div class="gallery-caption">mummas boy part-2</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham9.jpg" alt="Birthday memory 10">
+                    <div class="gallery-caption">baccha</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham10.jpg" alt="Birthday memory 11">
+                    <div class="gallery-caption">mai hu sonam naam to suna hi hoga</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham11.jpg" alt="Birthday memory 12">
+                    <div class="gallery-caption">behna ke sath</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham12.jpg" alt="Birthday memory 13">
+                    <div class="gallery-caption">behna ke sath part-2</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham13.jpg" alt="Birthday memory 14">
+                    <div class="gallery-caption">bacha part-2</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham14.jpg" alt="Birthday memory 15">
+                    <div class="gallery-caption">school ka pehla din</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/soham15.jpg" alt="Birthday memory 16">
+                    <div class="gallery-caption">colgate </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div class="gallery-modal">
+            <div class="modal-content">
+                <!-- Content will be dynamically loaded -->
+            </div>
+            <div class="modal-close">×</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Happy 18th Birthday!</h3>
+                <div class="footer-links">
+                    <a href="#hero">Home</a>
+                    <a href="#messages"></a>
+                    <a href="#troll">Surprise</a>
+                    <a href="#gallery">Gallery</a>Gaaliyan
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">FB</a>
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">TW</a>
+                </div>
+                <button class="btn" id="share-btn">Share This Website</button>
+                <p class="copyright">© 2025 Birthday Celebration</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Controls -->
+    <div class="music-controls" id="music-toggle">♪</div>
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // DOM Elements
+        const messageTrack = document.querySelector('.message-track');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const yesBtn = document.getElementById('yes-btn');
+        const noBtn = document.getElementById('no-btn');
+        const videoContainer = document.querySelector('.video-container');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const galleryModal = document.querySelector('.gallery-modal');
+        const modalContent = document.querySelector('.modal-content');
+        const modalClose = document.querySelector('.modal-close');
+        const musicToggle = document.getElementById('music-toggle');
+        const bgMusic = document.getElementById('bg-music');
+        const shareBtn = document.getElementById('share-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        // Variables
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.message-card');
+        const slideWidth = slides[0].offsetWidth + 30; // card width + margin
+        let isMusicPlaying = false;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            const messageCards = document.querySelectorAll('.message-card');
+
+            messageCards.forEach(card => {
+                // Flip on click
+                card.addEventListener('click', function () {
+                    this.classList.add('flipped');
+                });
+
+                // Close button functionality
+                const closeBtn = card.querySelector('.close-btn');
+                closeBtn.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Prevent card click event
+                    card.classList.remove('flipped');
+                });
+            });
+        });
+
+        // Troll Button
+        const videoContainers = document.querySelectorAll(".video-container");
+
+        yesBtn.addEventListener("click", function () {
+            videoContainers.forEach(container => {
+                container.style.display = "block";      // Reveal
+                container.classList.add("fade-in");     // Animate
+            });
+
+            yesBtn.textContent = "Enjoying the dance? 🎉";
+            noBtn.style.display = "none";
+
+            // Scroll to first video
+            setTimeout(() => {
+                videoContainers[0].scrollIntoView({ behavior: "smooth" });
+            }, 200);
+        });
+
+        noBtn.addEventListener("mouseover", function () {
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.max(Math.random() * (window.innerHeight - 100), window.scrollY + 100);
+
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+
+            const phrases = [
+                "Try again!",
+                "Nope!",
+                "Can't click me!",
+                "Too slow!",
+                "Almost got me!",
+                "Still no!",
+                "Keep trying!"
+            ];
+
+            noBtn.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+        });
+
+
+        // Gallery Items
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const isVideo = item.classList.contains('gallery-video');
+                const mediaElement = isVideo ?
+                    item.querySelector('video').cloneNode(true) :
+                    item.querySelector('img').cloneNode(true);
+
+                if (isVideo) {
+                    mediaElement.controls = true;
+                    mediaElement.autoplay = true;
+                }
+
+                modalContent.innerHTML = '';
+                modalContent.appendChild(mediaElement);
+                galleryModal.classList.add('active');
+
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        modalClose.addEventListener('click', function () {
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Music Controls
+        musicToggle.addEventListener('click', function () {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicToggle.innerHTML = '♪';
+                musicToggle.style.backgroundColor = 'var(--primary)';
+            } else {
+                bgMusic.play();
+                musicToggle.innerHTML = '■';
+                musicToggle.style.backgroundColor = 'var(--secondary)';
+            }
+            isMusicPlaying = !isMusicPlaying;
+        });
+
+        // Share Button
+        shareBtn.addEventListener('click', function () {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Birthday Celebration',
+                    text: 'Check out this awesome birthday website!',
+                    url: window.location.href
+                })
+                    .catch(err => console.error('Error sharing:', err));
+            } else {
+                // Fallback
+                alert('Copy this link to share: ' + window.location.href);
+            }
+        });
+
+        // Mobile Menu
+        mobileMenu.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenu.textContent = '☰';
+                    }
+                }
+            });
+        });
+
+        // Confetti Animation
+        function createConfetti() {
+            const confettiCount = 100;
+            const colors = ['#ff4081', '#3f51b5', '#ffeb3b', '#4caf50', '#9c27b0'];
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 3 + 2;
+
+                // Apply styles
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.backgroundColor = color;
+                confetti.style.left = `${left}%`;
+                confetti.style.animationDuration = `${animationDuration}s`;
+
+                // Random shape (square, circle, triangle)
+                const shape = Math.floor(Math.random() * 3);
+                if (shape === 0) {
+                    confetti.style.borderRadius = '50%';
+                } else if (shape === 1) {
+                    confetti.style.borderRadius = '0';
+                } else {
+                    confetti.style.width = '0';
+                    confetti.style.height = '0';
+                    confetti.style.backgroundColor = 'transparent';
+                    confetti.style.borderLeft = `${size / 2}px solid transparent`;
+                    confetti.style.borderRight = `${size / 2}px solid transparent`;
+                    confetti.style.borderBottom = `${size}px solid ${color}`;
+                }
+
+                // Add to hero section
+                document.getElementById('hero').appendChild(confetti);
+
+                // Remove after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, animationDuration * 1000);
+            }
+        }
+
+        // Balloon Animation
+        function createBalloons() {
+            const balloonCount = 5;
+            const colors = ['#ff4081', '#3f51b5', '#ffeb3b', '#4caf50', '#9c27b0'];
+
+            for (let i = 0; i < balloonCount; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+
+                // Random properties
+                const size = Math.random() * 30 + 20;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 10 + 10;
+                const delay = Math.random() * 5;
+
+                // Apply styles
+                balloon.style.width = `${size}px`;
+                balloon.style.height = `${size * 1.2}px`;
+                balloon.style.backgroundColor = color;
+                balloon.style.left = `${left}%`;
+                balloon.style.animationDuration = `${animationDuration}s`;
+                balloon.style.animationDelay = `${delay}s`;
+                balloon.style.borderRadius = '50% 50% 50% 50% / 40% 40% 60% 60%';
+
+                // Add string to balloon
+                const string = document.createElement('div');
+                string.style.position = 'absolute';
+                string.style.width = '1px';
+                string.style.height = `${size * 0.8}px`;
+                string.style.backgroundColor = 'rgba(255,255,255,0.5)';
+                string.style.bottom = `-${size * 0.8}px`;
+                string.style.left = '50%';
+                balloon.appendChild(string);
+
+                // Add to hero section
+                document.getElementById('hero').appendChild(balloon);
+
+                // Remove after animation
+                setTimeout(() => {
+                    balloon.remove();
+                }, (animationDuration + delay) * 1000);
+            }
+        }
+
+        // Mobile nav CSS fix
+        document.querySelector('head').insertAdjacentHTML('beforeend', `
+            <style>
+                @media (max-width: 768px) {
+                    .nav-links {
+                        position: fixed;
+                        top: 80px;
+                        left: 0;
+                        right: 0;
+                        background-color: rgba(255, 255, 255, 0.95);
+                        flex-direction: column;
+                        padding: 20px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                        transform: translateY(-150%);
+                        transition: transform 0.3s ease;
+                        z-index: 999;
+                    }
+                    
+                    .nav-links.active {
+                        transform: translateY(0);
+                    }
+                    
+                    .nav-links a {
+                        padding: 15px 0;
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            </style>
+        `);
+    </script>
+</body>
+
+</html>
